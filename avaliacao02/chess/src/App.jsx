@@ -1,6 +1,4 @@
 import React from 'react';
-import './index.css';
-
 
 // --- Ícones das Peças de Xadrez em SVG ---
 // Para manter tudo em um único arquivo, os ícones são componentes React.
@@ -88,21 +86,17 @@ export default function App() {
 	];
 
 	return (
-		<div className="bg-gray-900 text-gray-200 h-screen w-screen overflow-hidden flex flex-col font-sans p-6 md:p-8 select-none">
-
+		<div className="bg-gray-900 text-gray-200 min-h-screen min-w-full flex flex-col font-sans p-6 md:p-8 select-none">
 			{/* Cabeçalho */}
 			<header className="text-center mb-6">
-				<h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-wider">
-					Guia Rápido de Xadrez
-				</h1>
+				<h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-wider">Guia Rápido de Xadrez</h1>
 				<p className="text-gray-400">Os fundamentos do jogo em um só lugar.</p>
 			</header>
 
 			{/* Conteúdo Principal */}
-			<main className="flex-grow grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6">
-
+			<main className="flex-grow grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 max-w-5xl mx-auto w-full">
 				{/* Sobre o Xadrez */}
-				<div className="bg-gray-800/70 rounded-xl p-6 flex flex-col justify-center shadow-lg backdrop-blur-sm border border-gray-700">
+				<div className="bg-gray-800/70 rounded-xl p-6 flex flex-col justify-center shadow-lg border border-gray-700">
 					<h2 className="text-2xl font-bold text-white mb-3">O que é Xadrez?</h2>
 					<p className="text-gray-300">
 						O xadrez é um jogo de tabuleiro estratégico para dois jogadores. Considerado um esporte da mente, o objetivo é dar 'xeque-mate' no rei adversário, uma situação em que o rei está sob ataque e não tem movimentos legais para escapar.
@@ -110,11 +104,11 @@ export default function App() {
 				</div>
 
 				{/* Peças */}
-				<div className="md:col-span-2 md:row-span-2 bg-gray-800/70 rounded-xl p-6 shadow-lg backdrop-blur-sm border border-gray-700">
+				<div className="md:col-span-2 md:row-span-2 bg-gray-800/70 rounded-xl p-6 shadow-lg border border-gray-700">
 					<h2 className="text-2xl font-bold text-white mb-4 text-center">As Peças e Seus Movimentos</h2>
 					<div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-full content-center">
 						{pieces.map((piece) => (
-							<div key={piece.name} className="bg-gray-900/60 rounded-lg p-4 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 hover:bg-gray-700/80">
+							<div key={piece.name} className="bg-gray-900/60 rounded-lg p-4 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 hover:bg-gray-700/80 border border-gray-700 cursor-pointer">
 								{piece.icon}
 								<h3 className="font-semibold text-lg text-white mt-2">{piece.name}</h3>
 								<p className="text-xs text-gray-400 leading-tight">{piece.move}</p>
@@ -124,18 +118,16 @@ export default function App() {
 				</div>
 
 				{/* Regras Básicas */}
-				<div className="bg-gray-800/70 rounded-xl p-6 flex flex-col justify-center shadow-lg backdrop-blur-sm border border-gray-700">
+				<div className="bg-gray-800/70 rounded-xl p-6 flex flex-col justify-center shadow-lg border border-gray-700">
 					<h2 className="text-2xl font-bold text-white mb-3">Conceitos Essenciais</h2>
 					<ul className="space-y-3 text-gray-300">
-						<li><strong>Xeque-mate:</strong> O rei está ameaçado e não pode escapar. Fim de jogo.</li>
-						<li><strong>Afogamento:</strong> O jogador a mover não tem lances legais e seu rei não está em xeque. Resulta em empate.</li>
-						<li><strong>Roque:</strong> Movimento especial para proteger o rei e ativar a torre.</li>
-						<li><strong>Promoção:</strong> Quando um peão alcança a última fileira, ele pode ser promovido a qualquer outra peça (exceto rei).</li>
+						<li><strong className="text-yellow-400">Xeque-mate:</strong> O rei está ameaçado e não pode escapar. Fim de jogo.</li>
+						<li><strong className="text-yellow-400">Afogamento:</strong> O jogador a mover não tem lances legais e seu rei não está em xeque. Resulta em empate.</li>
+						<li><strong className="text-yellow-400">Roque:</strong> Movimento especial para proteger o rei e ativar a torre.</li>
+						<li><strong className="text-yellow-400">Promoção:</strong> Quando um peão alcança a última fileira, ele pode ser promovido a qualquer outra peça (exceto rei).</li>
 					</ul>
 				</div>
-
 			</main>
 		</div>
 	);
 }
-
